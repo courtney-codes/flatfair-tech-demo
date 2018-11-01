@@ -1,0 +1,12 @@
+{
+  "name": "flatfair-tech-demo",
+  "version": "1.0.0",
+  "description": "A technical demo for Flatfair.",
+  "main": "index.js",
+  "repository": "https://github.com/courtney-codes/flatfair-tech-demo.git",
+  "author": "Courtney Senior <courtney.senior.smb@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "slick": "^1.12.2"
+  }
+}

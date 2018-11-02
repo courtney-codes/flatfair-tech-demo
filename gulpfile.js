@@ -59,9 +59,8 @@ gulp.task('scripts', function(done) {
 
 gulp.task('serve', function(){
     browser.init({
-        proxy : '',
-        host  : '',
-        open  : false,
+        server: '.',
+        watch: true,
         notify: false
     });
     

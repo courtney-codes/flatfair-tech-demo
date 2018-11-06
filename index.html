@@ -12,6 +12,12 @@
 </head>
 
 <body>
+    <div id="login-modal" class="modal-area">
+        <div class="modal-box">
+            <input type="text" v-model="username" placeholder="Username or Email">
+            <input type="password" v-model="password" placeholder="Password">
+        </div>
+    </div>
     <div class="grid-wrapper">
         <div class="logo-area">
             <img class="logo" src="/src/assets/Flatfair_logo_RGB-04.png" alt="">
@@ -21,11 +27,14 @@
             <button class="signup-button">Sign Up</button>
         </div>
     </div>
-    <div class="modal-area">
-        <div class="login-modal"></div>
+    <div id="register" class="sign-up-area">
+
     </div>
+
 </body>
 
-<script src="/src/js/vue.js"></script>
+
+<script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
 <script src="/src/js/main.js"></script>
+
 </html>

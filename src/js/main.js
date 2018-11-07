@@ -3,6 +3,10 @@ var signupButton = document.getElementById('signUp');
 signupButton.addEventListener('click', function() {
 });
 
+Vue.component('tenant-form', {
+    template: ``
+})
+
 var login = new Vue({
     el: '#login',
     methods: {

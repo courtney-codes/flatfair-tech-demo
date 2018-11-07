@@ -9,10 +9,15 @@ html, body {
     height                 : 100%;
     font-family            : 'Roboto',                                                            sans-serif;
     background             : linear-gradient(360deg, rgba(255,255,255,0.4), rgba(255,255,255,1)), url('/src/assets/london_backdrop.jpg') center center no-repeat;
+    color: white;
 
     &.disable-scroll {
         overflow: hidden;
     }
+}
+
+h1 {
+    margin: 0;
 }
 
 div.grid-wrapper {
@@ -103,4 +108,9 @@ div.grid-wrapper {
     height    : 100%;
     background: #434a62;
     
+}
+
+.tenant-form {
+    width: 50%;
+    margin: auto;
 }

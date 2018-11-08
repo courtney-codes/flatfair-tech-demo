@@ -21,22 +21,28 @@
                 <img class="logo" src="/src/assets/Flatfair_logo_RGB-04.png" alt="">
             </div>
             <div class="button-area">
-                <button class="login-button">Log In</button>
+                <button v-on:click="openLoginModal($event)" class="login-button">Log In</button>
                 <button class="signup-button">Sign Up</button>
             </div>
         </div>
         <div class="sign-up-area">
             <div class="signup-type-switch">
-                <a class="type-switcher">
+                <a  class="type-switcher" 
+                    v-on:click="currentType = 'tenant'"
+                    v-bind:class="{ selected: currentType == 'tenant'}">
                     <i class="fas fa-user"></i>
                     <p>I'm a tenant</p>
                 </a>
-                <a class="type-switcher">
+                <a  class="type-switcher"
+                    v-on:click="currentType = 'landlord'"
+                    v-bind:class="{ selected: currentType == 'landlord'}">
                     <i class="fas fa-home"></i>
                     <p>I'm a landlord</p>
                 </a>
             </div>
-            <tenant-form></tenant-form>
+            <transition name="component-fade" mode="out-in">
+                <component v-bind:is="currentSignUpType"></component>
+            </transition>
         </div>
     </div>
 

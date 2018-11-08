@@ -20,6 +20,19 @@ h1 {
     margin: 0;
 }
 
+input {
+    background: transparent;
+    border: 2px white solid;
+    border-radius: 2px;
+    line-height: 1.2em;
+    color: white;
+    padding: 5px;
+
+    &[type=range] {
+        border: none;
+    }
+}
+
 div#login-app {
     height: 100%;
     width: 100%;
@@ -132,6 +145,11 @@ div.grid-wrapper {
         width: 100px;
         height: 100px;
 
+        &.selected {
+            background-color: white;
+            color: #6a9af4;
+        }
+
         .fas {
             font-size: 3em;
         }
@@ -151,12 +169,12 @@ div.grid-wrapper {
         margin-bottom: 20px;
     }
 
-    input {
-        background: transparent;
-        border: 2px white solid;
-        border-radius: 2px;
-        line-height: 1.2em;
-        color: white;
-        padding: 5px;
-    }
 }
+
+.component-fade-enter-active, .component-fade-leave-active {
+    transition: opacity .3s ease;
+  }
+  .component-fade-enter, .component-fade-leave-to
+  /* .component-fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }

@@ -108,53 +108,70 @@ Vue.component('landlord-form', {
 
 Vue.component('login-modal', {
     template: `
-    <transition name="modal">
-    <div id="login-modal" class="modal-area">
-        <div class="modal-box">
-            <input type="text" v-model="username" placeholder="Username or Email">
-            <input type="password" v-model="password" placeholder="Password">
-            <button type="submit" class="signup-button">Log in</button>
+
+    <div id="login-modal">
+        <div class="modal-area">
+            <div class="modal-box">
+                <div class="modal-close-icon"><i class="fas fa-times-circle" @click="closeModal"></i></div>
+                <h2>Log in to Flatfair</h2>
+                <input type="text" v-model="username" placeholder="Username or Email">
+                <input type="password" v-model="password" placeholder="Password">
+                <button type="submit" v-on:click="submitLoginDetails" class="signup-button">{{ statusText }}</button>
+                <a>Forgotten your password?</a>
+            </div>
         </div>
     </div>
-    </transition>
     `,
     data: function() {
         return {
             username  : '',
             password  : '',
-            statusText: ''
+            statusText: 'Log In',
         }
     },
     methods: {
+        /** This function is meant to emulate proper authentication.
+         *  There would be a router and two-factor authentication in production code.
+         */
         submitLoginDetails: function() {
-            fetch(`${DB_URL}/users`)
+            this.statusText = 'Logging in...'
+
+            setTimeout(() => {
+                this.statusText = 'Great! You have successfully logged in.'
+            }, 2000);
+
+            /** Example of a mock backend
+             * 
+             *      fetch(`${DB_URL}/users`)
                 .then(function(users){
-                    users.forEach(user => {
-                        if (user.username == this.username && user.password == this.password) {
-                            this.statusText = 'Success! You have logged in.';
-                            /** Redirect to secured homepage once logged in. */
-                        }
-                    });
-                });
+                users.forEach(user => {
+                    if (user.username == this.username && user.password == this.password) {
+                        this.statusText = 'Success! You have logged in.';
+                    }
+                })
+                })
+             * 
+             */
+
+       
+        },
+        closeModal: function() {
+            vm.$data.loginOpen = false;
         }
     }
 })
 
-new Vue({
+var vm = new Vue({
     el: '#login-app',
     data: {
         currentType: 'tenant',
-        types: ['tenant', 'landlord']
+        types: ['tenant', 'landlord'],
+        loginOpen: false
     },
     computed: {
         currentSignUpType: function() {
             return this.currentType + '-form';
         }
     },
-    methods: {
-        openLoginModal: function(e) {
-            e.preventDefault();
-            
-        }
-    }
+
 })

@@ -87,23 +87,17 @@ div.grid-wrapper {
 /* Login pop-up modal */
 
 .modal-area {
-    background: #444444;
+    background-color: rgba(0,0,0,0.5);
     box-sizing: border-box;
     cursor    : pointer;
     height    : 100%;
     left      : 0;
-    opacity   : 0;
     overflow-y: auto;
     position  : fixed;
     top       : 0;
-    visibility: hidden;
     width     : 100%;
     z-index   : 5;
 
-    &.open {
-        visibility: visible;
-        opacity: 0.8;
-    }
     
     .modal-box {
         background-color: #434a62;
@@ -112,14 +106,21 @@ div.grid-wrapper {
         width           : 80%;
         max-width       : 700px;
         display         : grid;
+        grid-gap: 10px;
         padding         : 50px;
         border-radius   : 10px;
         cursor: initial;
         opacity: 1;
-        
-    }
 
+        .modal-close-icon {
+            display: flex;
+            align-items: start;
+            justify-content: end;
+            font-size: 2em;
+        }
+    }
 }
+
 
 .sign-up-area {
     width     : 100%;

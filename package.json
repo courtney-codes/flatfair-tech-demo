@@ -18,5 +18,8 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
     "slick": "^1.12.2"
+  },
+  "devDependencies": {
+    "json-server": "^0.14.0"
   }
 }

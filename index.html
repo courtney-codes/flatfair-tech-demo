@@ -8,27 +8,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" media="screen" href="dist/css/main.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
 
 </head>
 
 <body>
-    <div id="login-modal" class="modal-area">
-        <div class="modal-box">
-            <input type="text" v-model="username" placeholder="Username or Email">
-            <input type="password" v-model="password" placeholder="Password">
+    <div id="login-app">
+        <login-modal></login-modal>
+        <div class="grid-wrapper">
+            <div class="logo-area">
+                <img class="logo" src="/src/assets/Flatfair_logo_RGB-04.png" alt="">
+            </div>
+            <div class="button-area">
+                <button class="login-button">Log In</button>
+                <button class="signup-button">Sign Up</button>
+            </div>
         </div>
-    </div>
-    <div class="grid-wrapper">
-        <div class="logo-area">
-            <img class="logo" src="/src/assets/Flatfair_logo_RGB-04.png" alt="">
+        <div class="sign-up-area">
+            <div class="signup-type-switch">
+                <a class="type-switcher">
+                    <i class="fas fa-user"></i>
+                    <p>I'm a tenant</p>
+                </a>
+                <a class="type-switcher">
+                    <i class="fas fa-home"></i>
+                    <p>I'm a landlord</p>
+                </a>
+            </div>
+            <tenant-form></tenant-form>
         </div>
-        <div class="button-area">
-            <button class="login-button">Log In</button>
-            <button class="signup-button">Sign Up</button>
-        </div>
-    </div>
-    <div id="register-app" class="sign-up-area">
-        <tenant-form></tenant-form>
     </div>
 
 </body>

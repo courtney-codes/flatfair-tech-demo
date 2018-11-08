@@ -20,6 +20,11 @@ h1 {
     margin: 0;
 }
 
+div#login-app {
+    height: 100%;
+    width: 100%;
+}
+
 div.grid-wrapper {
     display              : grid;
     grid-template-columns: repeat(3, 1fr);
@@ -109,6 +114,28 @@ div.grid-wrapper {
     height: auto;
     background: #434a62;
     
+}
+
+.signup-type-switch {
+
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    
+    .type-switcher {
+
+        text-align: center;
+        margin: auto 0;
+        border: 5px solid white;
+        border-radius: 50%;
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+
+        .fas {
+            font-size: 3em;
+        }
+    }
 }
 
 .signup-form {

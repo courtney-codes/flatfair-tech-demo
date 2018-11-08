@@ -48,7 +48,7 @@ gulp.task('scripts', function(done) {
         .pipe(sourcemaps.init())
         .pipe(concat('scripts.js'))
         .pipe(rename({ suffix: '.min'}))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(sourcemaps.write('./'))
 
     .pipe(gulp.dest(paths.scripts.dist))
